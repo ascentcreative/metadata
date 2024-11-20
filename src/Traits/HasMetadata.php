@@ -53,5 +53,13 @@ trait HasMetadata {
         return $this->morphMany(Metadata::class, 'metadatable');
     }
    
+    public function getMetadata($key) {
+        $md = $this->metadata()->where('key', $key)->first();
+        if($md) {
+            return $md->value;
+        } else {
+            return null;
+        }
+    }
 
 }
