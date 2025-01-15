@@ -13,6 +13,9 @@ class Metadata extends Model {
 
     public $table = 'metadata';
 
+    static $forms_keyfield = 'key';
+    static $forms_valuefield = 'value';
+
 
     public $casts = [
         'value' => 'array',
